@@ -33,7 +33,6 @@ public class AppConfig {
     @Bean
     // 할인 정책이 변경되었을 때, 아래의 클래스만 변경해주면 된다.
     public DiscountPolicy discountPolicy() {
-        System.out.println("call AppConfig.discountPolicy");
         return new RateDiscountPolicy();
     }
 
