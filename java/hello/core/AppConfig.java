@@ -18,17 +18,18 @@ public class AppConfig {
     @Bean
     public MemberService memberService() {
         System.out.println("call AppConfig.memberService");
-        return new MemberServiceImpl(MemberRepository());
+        return new MemberServiceImpl(memberRepository());
     }
     @Bean
-    public static MemberRepository MemberRepository() {
+    public static MemberRepository memberRepository() {
         System.out.println("call AppConfig.MemberRepository");
         return new MemoryMemberRepository();
     }
+
     @Bean
     public OrderSerivce orderService() {
         System.out.println("call AppConfig.orderService");
-        return new OrderServiceImpl(MemberRepository(), discountPolicy());
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean
     // 할인 정책이 변경되었을 때, 아래의 클래스만 변경해주면 된다.

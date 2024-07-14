@@ -16,9 +16,9 @@ import org.springframework.context.annotation.FilterType;
 )  // @Component Annotation 붙은 애들을 찾음
 public class AutoAppConfig {
 
-    @Bean
+    /*@Bean
     MemberRepository memberRepository () {
         return new MemoryMemberRepository();
-    }
+    }*/
 
 }
